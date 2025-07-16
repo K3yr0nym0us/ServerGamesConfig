@@ -1,7 +1,6 @@
-# INSTRUCCIONES
+# INSTRUCCIONES PARA CREAR UN SERVER DE 7 DAYS TO DIE
 
-## INSTALAR STEAM CMD
-### PARA NO HACERLO CON USUARIO ROOT (PELIGRO DE SEGURIDAD) CREAMOS UN DOCKER
+### RECORDEMOS USAR EL USUARIO "steam" Y NO HACERLO COMO ROOT
 
 ```sh
   docker run -it --name=7daysserver \
@@ -19,17 +18,28 @@
     -p 26905:26905/tcp \
   cm2network/steamcmd bash
 
-  ./steamcmd.sh # ejecutamos steam (deberiamos estar dentro del docker)
-  exit # salimos de steamcmd
-  mkdir ~/7days  # creamos un directorio
+  # ejecutamos steamcmd (deberiamos estar dentro del docker)
+  ./steamcmd.sh
+
+  # salimos de steamcmd
+  exit
+
+  # creamos un directorio base
+  mkdir ~/7days
+
   # instalamos el server
   ./steamcmd.sh +force_install_dir ~/7days +login anonymous +app_update 294420 validate +quit
 ```
 
 ## MONTAJE DEL SERVIDOR
 ```sh
+  # Entramos en su directorio base
   cd ~/7days
-  nano serverconfig.xml # aca ingresamos los datos de el archivo
+
+  # Acá ingresamos los datos de el archivo
+  nano serverconfig.xml
+
+  # Iniciamos el servidor
   ./startserver.sh -configfile=serverconfig.xml
   # Presiona Ctrl + P y luego Ctrl + Q. para salir del docker sin cerrar la ejecucion
 
