@@ -1,0 +1,15 @@
+server.queryport 28014
+server.port 28015
+app.port 28082
+server.hostname "DE CHILL SERVER SOLO/DUO/TRIO EN/ES"
+server.description "REGLAS\n\nNO TOXIQUEAR\nNO RAIDEOS OFFLINE (MOTIVO DE BAN)\nPROHIBIDAS LAS ALIANZAS PARA RAIDEAR\nNO GRIFEAR BASES\nMAXIMO DOS BASE POR TEAM\nNO SPAM DE OTROS SERVERS\n\n"
+server.tags "vanilla,NA"
+server.maxplayers 20
+server.level "Procedural Map"
+server.worldsize 3000
+server.seed 720630715
+server.saveinterval 120
+hackablelockedcrate.requiredhackseconds 600
+env.daylength 900
+env.nightlength 300
+owner 76561198256744061
