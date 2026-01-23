@@ -1,0 +1,25 @@
+services:
+  7dtd-server:
+    image: vinanrra/7dtd-server
+    container_name: 7daysserver
+    environment:
+      - START_MODE=1
+      - VERSION=stable
+      - PUID=1005
+      - PGID=1005
+      - TimeZone=America/Santiago
+    volumes:
+      - ./7DaysToDie:/home/sdtdserver/.local/share/7DaysToDie/
+      - ./7DaysToDie/LGSM-Config:/home/sdtdserver/lgsm/config-lgsm/sdtdserver
+    ports:
+      - 26900:26900/tcp
+      - 26900:26900/udp
+      - 26901:26901/udp
+      - 26902:26902/udp
+    ulimits:
+      nofile:
+        soft: "10240"
+        hard: "10240"
+
+    restart: unless-stopped
+
